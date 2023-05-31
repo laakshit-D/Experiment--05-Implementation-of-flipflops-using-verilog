@@ -102,10 +102,12 @@ Q(t+1)=T′Q(t)+TQ(t)′
 ⇒Q(t+1)=T⊕Q(t)
 
 ### Procedure
-/* write all the steps invloved */
-
-
-
+1. Open Quartus II and select new project and choose the file location.
+2. Module Declaration. Module should have the file name.
+3. Declare Inputs and outputs.
+4. Use assign declaration and wire to define the functionality of logic circuits.
+5. End the program with endmodule.
+6. Run the program and choose RTL viewer to get RTL realization.
 ### PROGRAM 
 ```
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
@@ -123,7 +125,19 @@ nand (Q,X,Qbar);
 nand(Qbar,Y,Q);
 endmodule
 
-ii) D FLIP FLOP:
+ii) JK FLIP FLOP:
+
+module JK(J,K,Clock,Q,Qbar);
+input J,K,Clock;
+output Q,Qbar;
+wire P,S;
+nand (P,J,Clock,Qbar);
+nand (S,K,Clock,Q);
+nand (Q,P,Qbar);
+nand (Qbar,S,Q);
+endmodule
+
+iii) D FLIP FLOP:
 
 module D(D,Clock,Q,Qbar);
 input D,Clock;
@@ -134,18 +148,6 @@ nand (X,D,Clock);
 nand (Y,Dbar,Clock);
 nand (Q,X,Qbar);
 nand (Qbar,Y,Q);
-endmodule
-
-iii) JK FLIP FLOP:
-
-module JK(J,K,Clock,Q,Qbar);
-input J,K,Clock;
-output Q,Qbar;
-wire P,S;
-nand (P,J,Clock,Qbar);
-nand (S,K,Clock,Q);
-nand (Q,P,Qbar);
-nand (Qbar,S,Q);
 endmodule
 
 iv) T FLIP FLOP:
@@ -161,22 +163,25 @@ nand (Qbar,B,Q);
 endmodule
 ```
 ### RTL LOGIC FOR FLIPFLOPS 
-
-
-
-
-
-
-
-
+#### SR Flip Flop
+![image](https://github.com/laakshit-D/Experiment--05-Implementation-of-flipflops-using-verilog/assets/119559976/f0655985-26af-4def-bf0a-eec7f8624397)
+#### JK Flip Flop
+![image](https://github.com/laakshit-D/Experiment--05-Implementation-of-flipflops-using-verilog/assets/119559976/8e714223-0764-49d8-9532-30bd1002f3b2)
+#### D Flip Flop
+![image](https://github.com/laakshit-D/Experiment--05-Implementation-of-flipflops-using-verilog/assets/119559976/bf32b6c9-2d53-47fa-aa32-f885fa9c361a)
+#### T Flip Flop
+![image](https://github.com/laakshit-D/Experiment--05-Implementation-of-flipflops-using-verilog/assets/119559976/f47afe19-b525-443b-ae57-6ac8631cf953)
 
 ### TIMING DIGRAMS FOR FLIP FLOPS 
+#### SR Flip Flop
+![image](https://github.com/laakshit-D/Experiment--05-Implementation-of-flipflops-using-verilog/assets/119559976/5b20edfa-79eb-4d53-be82-251c6ff6a287)
+#### JK Flip Flop
+![image](https://github.com/laakshit-D/Experiment--05-Implementation-of-flipflops-using-verilog/assets/119559976/53b6ac52-cf03-4c7f-940b-3988ecee8149)
+#### D Flip Flop
+![image](https://github.com/laakshit-D/Experiment--05-Implementation-of-flipflops-using-verilog/assets/119559976/74b86a7d-db58-4c77-a7f6-049e0c02c952)
 
-
-
-
-
-
-
+#### T Flip Flop
+![image](https://github.com/laakshit-D/Experiment--05-Implementation-of-flipflops-using-verilog/assets/119559976/072c58f5-3245-4cb1-bed0-293dfa61bfd7)
 
 ### RESULTS 
+All the flipflops are implementde using verilog and their functionality has been validated using their functional tables.
