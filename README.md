@@ -113,53 +113,61 @@ Q(t+1)=T′Q(t)+TQ(t)′
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
 Developed by: Laakshit D
 RegisterNumber: 212222230071
-i) SR FLIP FLOP:
-
-module S(S,R,Clock,Q,Qbar);
-input S,R,Clock;
-output Q,Qbar;
-wire X,Y;
-nand (X,S,Clock);
-nand (Y,R,Clock);
-nand (Q,X,Qbar);
-nand(Qbar,Y,Q);
+```
+```
+i) SR flipflops
+module flipflops(S,R,Q,Qbar,clk);
+input S,R,clk;
+output reg Q,Qbar;
+initial Q = 0;
+initial Qbar = 1;
+always @(posedge clk)
+begin
+Q = S|((~R)&Q);
+Qbar = R|((~S)&(~Qbar));
+end
 endmodule
-
-ii) JK FLIP FLOP:
-
-module JK(J,K,Clock,Q,Qbar);
-input J,K,Clock;
-output Q,Qbar;
-wire P,S;
-nand (P,J,Clock,Qbar);
-nand (S,K,Clock,Q);
-nand (Q,P,Qbar);
-nand (Qbar,S,Q);
+```
+```
+ii) JK flipflops
+module JK(J,K,Q,Qbar,clk);
+input J,K,clk;
+output reg Q,Qbar;
+initial Q = 0;
+initial Qbar = 1;
+always @(posedge clk)
+begin
+Q = (((~K)&Q)|(J&(~Q)));
+Qbar = ((~J)&Qbar)|((~K)&(~Qbar)); 
+end
 endmodule
-
-iii) D FLIP FLOP:
-
-module D(D,Clock,Q,Qbar);
-input D,Clock;
-output Q,Qbar;
-assign Dbar = ~D;
-wire X,Y;
-nand (X,D,Clock);
-nand (Y,Dbar,Clock);
-nand (Q,X,Qbar);
-nand (Qbar,Y,Q);
+```
+```
+iii) D flipflop
+module Dflipflop(D,Q,Qbar,clk);
+input D,clk;
+output reg Q,Qbar;
+initial Q = 0;
+initial Qbar = 1;
+always @(posedge clk)
+begin
+Q = D;
+Qbar = ~D;
+end
 endmodule
-
-iv) T FLIP FLOP:
-
-module T (T,Clock,Q,Qbar);
-input T,Clock;
-output Q,Qbar;
-wire A,B;
-nand (A,T,Clock,Qbar);
-nand (B,T,Clock,Q);
-nand (Q,A,Qbar);
-nand (Qbar,B,Q);
+```
+```
+iv) T flipflop
+module Tflipflop(T,Q,Qbar,clk);
+input T,clk;
+output reg Q,Qbar;
+initial Q = 0;
+initial Qbar = 1;
+always @(posedge clk)
+begin
+Q = ((T&(~Q))|((~T)&Q));
+Qbar = ((~T)&Qbar)|(T&(~Qbar));
+end
 endmodule
 ```
 ### RTL LOGIC FOR FLIPFLOPS 
@@ -168,7 +176,7 @@ endmodule
 #### JK Flip Flop
 ![image](https://github.com/laakshit-D/Experiment--05-Implementation-of-flipflops-using-verilog/assets/119559976/8e714223-0764-49d8-9532-30bd1002f3b2)
 #### D Flip Flop
-![image](https://github.com/laakshit-D/Experiment--05-Implementation-of-flipflops-using-verilog/assets/119559976/bf32b6c9-2d53-47fa-aa32-f885fa9c361a)
+![image](https://github.com/laakshit-D/Experiment--05-Implementation-of-flipflops-using-verilog/assets/119559976/a8e37cc6-5f60-4b7d-b7bf-c6b55d6c5073)
 #### T Flip Flop
 ![image](https://github.com/laakshit-D/Experiment--05-Implementation-of-flipflops-using-verilog/assets/119559976/f47afe19-b525-443b-ae57-6ac8631cf953)
 
