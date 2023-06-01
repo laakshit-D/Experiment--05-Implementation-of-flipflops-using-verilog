@@ -114,8 +114,8 @@ Program for flipflops  and verify its truth table in quartus using Verilog progr
 Developed by: Laakshit D
 RegisterNumber: 212222230071
 ```
+#### i) SR flipflops
 ```
-i) SR flipflops
 module SR(S,R,Q,Qbar,clk);
 input S,R,clk;
 output reg Q,Qbar;
@@ -128,8 +128,8 @@ Qbar = R|((~S)&(~Qbar));
 end
 endmodule
 ```
+#### ii) JK flipflops
 ```
-ii) JK flipflops
 module JK(J,K,Q,Qbar,clk);
 input J,K,clk;
 output reg Q,Qbar;
@@ -142,8 +142,8 @@ Qbar = ((~J)&Qbar)|((~K)&(~Qbar));
 end
 endmodule
 ```
+#### iii) D flipflop
 ```
-iii) D flipflop
 module DFF(D,Q,Qbar,clk);
 input D,clk;
 output reg Q,Qbar;
@@ -156,8 +156,8 @@ Qbar = ~D;
 end
 endmodule
 ```
+#### iv) T flipflop
 ```
-iv) T flipflop
 module TFF(T,Q,Qbar,clk);
 input T,clk;
 output reg Q,Qbar;
