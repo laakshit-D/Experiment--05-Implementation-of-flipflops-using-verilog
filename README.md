@@ -116,7 +116,7 @@ RegisterNumber: 212222230071
 ```
 ```
 i) SR flipflops
-module flipflops(S,R,Q,Qbar,clk);
+module SR(S,R,Q,Qbar,clk);
 input S,R,clk;
 output reg Q,Qbar;
 initial Q = 0;
@@ -144,7 +144,7 @@ endmodule
 ```
 ```
 iii) D flipflop
-module Dflipflop(D,Q,Qbar,clk);
+module DFF(D,Q,Qbar,clk);
 input D,clk;
 output reg Q,Qbar;
 initial Q = 0;
@@ -158,7 +158,7 @@ endmodule
 ```
 ```
 iv) T flipflop
-module Tflipflop(T,Q,Qbar,clk);
+module TFF(T,Q,Qbar,clk);
 input T,clk;
 output reg Q,Qbar;
 initial Q = 0;
@@ -187,7 +187,6 @@ endmodule
 ![image](https://github.com/laakshit-D/Experiment--05-Implementation-of-flipflops-using-verilog/assets/119559976/53b6ac52-cf03-4c7f-940b-3988ecee8149)
 #### D Flip Flop
 ![image](https://github.com/laakshit-D/Experiment--05-Implementation-of-flipflops-using-verilog/assets/119559976/74b86a7d-db58-4c77-a7f6-049e0c02c952)
-
 #### T Flip Flop
 ![image](https://github.com/laakshit-D/Experiment--05-Implementation-of-flipflops-using-verilog/assets/119559976/072c58f5-3245-4cb1-bed0-293dfa61bfd7)
 
