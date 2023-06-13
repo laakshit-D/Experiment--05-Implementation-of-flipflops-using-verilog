@@ -9,10 +9,8 @@ SR flip-flop operates with only positive clock transitions or negative clock tra
 
 ![image](https://user-images.githubusercontent.com/36288975/167910294-bb550548-b1dc-4cba-9044-31d9037d476b.png)
 
- 
 This circuit has two inputs S & R and two outputs Qtt & Qtt’. The operation of SR flipflop is similar to SR Latch. But, this flip-flop affects the outputs only when positive transition of the clock signal is applied instead of active enable.
 The following table shows the state table of SR flip-flop.
-
 
 ![image](https://user-images.githubusercontent.com/36288975/167910648-ced88e69-869c-42e2-9718-a285a3902446.png)
 
@@ -103,9 +101,8 @@ Q(t+1)=T′Q(t)+TQ(t)′
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
 Developed by: Laakshit D
 RegisterNumber: 212222230071
-```
-#### i) SR flipflops
-```
+
+i) SR flipflops
 module SR(S,R,Q,Qbar,clk);
 input S,R,clk;
 output reg Q,Qbar;
@@ -118,8 +115,8 @@ Qbar = R|((~S)&(~Qbar));
 end
 endmodule
 ```
-#### ii) JK flipflops
 ```
+ii) JK flipflops
 module JK(J,K,Q,Qbar,clk);
 input J,K,clk;
 output reg Q,Qbar;
@@ -132,8 +129,8 @@ Qbar = ((~J)&Qbar)|((~K)&(~Qbar));
 end
 endmodule
 ```
-#### iii) D flipflop
 ```
+iii) D flipflop
 module DFF(D,Q,Qbar,clk);
 input D,clk;
 output reg Q,Qbar;
@@ -146,8 +143,8 @@ Qbar = ~D;
 end
 endmodule
 ```
-#### iv) T flipflop
 ```
+iv) T flipflop
 module TFF(T,Q,Qbar,clk);
 input T,clk;
 output reg Q,Qbar;
